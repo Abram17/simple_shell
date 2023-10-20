@@ -13,7 +13,7 @@ int isbuilt(char *cmd)
 {
 	int i;
 	char *built[] = {
-		"exit", "env", "setenv", "cd", NULL
+		"exit", "env", NULL
 	};
 
 	for (i = 0; built[i]; i++)
@@ -39,7 +39,7 @@ void built(char **cmd, char **argv, int *s, int n)
 {
 	if (_strcmp(cmd[0], "exit") == 0)
 		_exitshell(cmd, argv, s, n);
-	if (_strcmp(cmd[0], "env") == 0)
+	else if (_strcmp(cmd[0], "env") == 0)
 		_penv(cmd, s);
 }
 

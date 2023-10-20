@@ -13,7 +13,7 @@
 
 void _exitshell(char **cmd, char **argv, int *s, int n)
 {
-	int val = *s;
+	int val = (*s);
 	char *idx;
 	char msg[] = ": exit: Illegal number: ";
 
@@ -34,7 +34,7 @@ void _exitshell(char **cmd, char **argv, int *s, int n)
 			write(STDERR_FILENO, "\n", 1);
 			free(idx);
 			freea(cmd);
-			*s = 2;
+			(*s) = 2;
 
 			return;
 		}
@@ -66,4 +66,3 @@ void _penv(char **cmd, int *s)
 	freea(cmd);
 	*s = 0;
 }
-
